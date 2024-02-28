@@ -9,7 +9,7 @@ export const AddToCartBtn = ({ product }) => {
 
 
     const addToCart = (product) => {
-        setCart((cart) => [...cart, product])
+        setCart((cart) => [...cart,{...product, quantity: 1}])
         console.log(cart)
     }
 

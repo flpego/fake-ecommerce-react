@@ -8,7 +8,34 @@ export const ProductsProvider = ({ children }) => {
     const [productsList, setProductsList] = useState([]);
     const [categories, setCategories] = useState([]);
     const [cart, setCart] = useState([]);
+    const [total, setTotal] = useState(0)
 
+
+    const removeProductFromCart = (productId) => {
+        setCart(cart.filter(item => item.id !== productId))
+    };
+    const updateQuantity = (productId, newQuantity) => {
+        setCart(prevCart => {
+            console.log(prevCart)
+            return prevCart.map(item => {
+                if (item.id === productId) {
+                    return { ...item, quantity: newQuantity };
+                }
+                console.log(item)
+                return item;
+            });
+        });
+    };
+
+
+    useEffect(() => {
+        if (cart.length > 0) {
+            const totalPrice = cart.reduce((acc, product) => acc + product.price, 0);
+            setTotal(totalPrice);
+        } else {
+            setTotal(0);
+        }
+    }, [cart]);
 
 
     //cuando carga la app, hace la llamada a la Api
@@ -23,13 +50,19 @@ export const ProductsProvider = ({ children }) => {
     useEffect(() => {
         const dataCategories = [...new Set(productsList.map(product => product.category))]
         setCategories(dataCategories)
-    }, [productsList])
+    }, [productsList]);
+
+
 
     const productContextValue = {
         productsList,
         categories,
         cart,
-        setCart
+        setCart,
+        setTotal,
+        total,
+        removeProductFromCart,
+        updateQuantity
     }
 
     return (
