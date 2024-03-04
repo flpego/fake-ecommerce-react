@@ -16,7 +16,6 @@ export const ProductsProvider = ({ children }) => {
     };
     const updateQuantity = (productId, newQuantity) => {
         setCart(prevCart => {
-            console.log(prevCart)
             return prevCart.map(item => {
                 if (item.id === productId) {
                     return { ...item, quantity: newQuantity };
@@ -29,12 +28,10 @@ export const ProductsProvider = ({ children }) => {
 
 
     useEffect(() => {
-        if (cart.length > 0) {
-            const totalPrice = cart.reduce((acc, product) => acc + product.price, 0);
+        
+            const totalPrice = cart.reduce((acc, product) => acc + (product.price *product.quantity), 0);
             setTotal(totalPrice);
-        } else {
-            setTotal(0);
-        }
+
     }, [cart]);
 
 

@@ -1,32 +1,27 @@
-import { useContext } from "react"
-import { ProductsContext } from "../context/ProductsContext"
+import React, { useContext } from "react";
+import { ProductsContext } from "../context/ProductsContext";
 
-export const CartTableRow = ({ productId, title, image, price, quantity}) => {
-    const {removeProductFromCart, updateQuantity, setTotal} = useContext(ProductsContext)
+export const CartTableRow = ({ productId, title, image, price, quantity }) => {
+    const { removeProductFromCart, updateQuantity, total } = useContext(ProductsContext);
+
     const updatePrice = (productId, newQuantity) => {
-        const totalPrice = price * newQuantity;
-        setTotal(totalPrice);
+        updateQuantity(productId, newQuantity);
     };
-    return (
 
+    return (
         <tr key={productId}>
             <td>
-            <button onClick={() =>removeProductFromCart(productId)}>X</button>
-
+                <button onClick={() => removeProductFromCart(productId)}>X</button>
                 <img src={image} alt="" className="image" /> - {title}
             </td>
             <td>
-                <button onClick={() => updateQuantity(productId, quantity + 1)}>+</button>
+                <button onClick={() => updatePrice(productId, quantity - 1)}>-</button>
                 <span>{quantity}</span>
-                <button onClick={() => updateQuantity(productId, quantity - 1)}>-</button>
-                -
+                <button onClick={() => updatePrice(productId, quantity + 1)}>+</button>
             </td>
             <td>
-                {price}
+                {price * quantity}
             </td>
-
         </tr>
-
-
-    )
-}
+    );
+};
