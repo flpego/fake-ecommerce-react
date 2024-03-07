@@ -1,0 +1,21 @@
+header {
+    background-color: $color-blanco;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1rem;
+    div {
+        display: flex;
+        justify-content: space-around;
+        width:50%
+    }
+    nav {
+        width:40%;
+        @include d-flex(row, center, space-around);
+
+        a {
+            color: black;
+            font-weight: map-get($map: $font-weights, $key:semibold );
+        }
+    }
+}

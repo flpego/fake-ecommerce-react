@@ -20,7 +20,7 @@ export const ProductCards = ({ productId, title, image, price }) => {
    }
 
   return (
-    <div key={productId}>
+    <div key={productId} loading="lazy">
       <p>{title}</p>
       <img src={image} alt="" className='image' />
       <p>$ {price}</p>

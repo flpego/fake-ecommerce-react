@@ -30,13 +30,17 @@ export const ProductsList = () => {
     };
 
     return (
-        <div>
-            <FilterProductsForm
-                categories={categories}
-                categoryValue={categoryValue}
-                setCategoryValue={setCategoryValue}
-                handleSubmit={handleSubmit}
-            />
+        <div className='productList_container' >
+            <div className='productList_header'>
+                <FilterProductsForm
+                    categories={categories}
+                    categoryValue={categoryValue}
+                    setCategoryValue={setCategoryValue}
+                    handleSubmit={handleSubmit}
+                />
+                <p>Blog</p>
+                <p>About Us</p>
+            </div>
             <div>
                 <RenderProducts productsList={originalProducts} />
             </div>

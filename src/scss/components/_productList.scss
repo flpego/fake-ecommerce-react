@@ -1,0 +1,8 @@
+.productList_container{
+    background-color: rgb(206, 235, 235);
+}
+
+.productList_header {
+    @include d-flex(row, center, space-around)
+
+}

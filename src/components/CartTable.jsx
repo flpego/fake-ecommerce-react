@@ -12,6 +12,7 @@ export const CartTableRow = ({ productId, title, image, price, quantity }) => {
         <tr key={productId}>
             <td>
                 <button onClick={() => removeProductFromCart(productId)}>X</button>
+                
                 <img src={image} alt="" className="image" /> - {title}
             </td>
             <td>
