@@ -1,59 +1,75 @@
-import { useContext, useEffect, useRef, useState } from "react"
+import { useContext, useEffect} from "react"
 import { ProductsContext } from "../context/ProductsContext";
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+// import Swiper bundle with all modules installed
+
+// import styles bundle
+import 'swiper/css/bundle';
 
 function Slider() {
-
     const { productsList } = useContext(ProductsContext);
     const filterProducts = productsList.filter((product) => product.category === "electronics");
 
-
-    const imageRef = useRef();
-    const [currentIndex, setCurrentIndex] = useState(0)
     useEffect(() => {
-        const listNode = imageRef.current;
-        const imgNode = listNode.querySelectorAll("li > img")[currentIndex];
-        console.log(imgNode)
-        if (imgNode) {
-            imgNode.scrollIntoView({
-                behavior: "smooth",
-            })
+        const swiper = new Swiper('.swiper', {
+            // configure Swiper to use modules
+            modules: [Navigation, Pagination],
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 3000, // Cambiado a 3 segundos, ajusta según sea necesario
+            },
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
 
-        }
-    }, [currentIndex]);
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
 
-    const scrollToImg = (direction) => { 
-        let newIndex;
-        const lastIndex = filterProducts.length - 1;
-    
-        if (direction === "prev") {
-            newIndex = currentIndex === 0 ? lastIndex : currentIndex - 1;
-        } else if (direction === "next") {
-            newIndex = currentIndex === lastIndex ? 0 : currentIndex + 1;
-        }
-    
-        setCurrentIndex(newIndex);
-     }
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
 
-    return (
-        <div className="slider_main">
-            <div className="slider_container">
-                <div className="leftArrow" onClick={() => scrollToImg("prev")}> &#8592;</div>
-                <div className="rightArrow" onClick={() => scrollToImg("next")}> &#8594; </div>
-                <div className="image_container">
-                    <ul ref={imageRef}>
-                        {
-                            filterProducts.map((product, index) => {
-                                return (<li key={product.id} style={{ display: index === currentIndex ? "block" : "none" }}>
-                                    <img src={product.image} alt="" loading="lazy"/>
-                                <h4>Compra en oferta {product.title} a tan solo ${product.price}</h4>
 
-                                </li>)
-                            })
-                        }
-                    </ul>
-                </div>
+    }, [filterProducts]);
+
+
+
+
+    return (<>
+
+
+        <div className="swiper">
+            <div className="swiper-wrapper">
+                {
+                    filterProducts.map((product, index) => {
+                        return (<li key={product.id} className="swiper-slide" >
+                            <img src={product.image} alt="" loading="lazy" />
+                            <h4>Compra en oferta {product.title} a tan solo ${product.price}</h4>
+
+                        </li>)
+                    })
+                }
+
             </div>
+            <div className="swiper-pagination"></div>
+
+            <div className="swiper-button-prev"></div>
+            <div className="swiper-button-next"></div>
+
+            <div className="swiper-scrollbar"></div>
         </div>
+    </>
     )
 }
 
