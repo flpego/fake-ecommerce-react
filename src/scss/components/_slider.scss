@@ -1,21 +1,64 @@
-
-.swiper {
-    width: 600px;
-    height: 600px;
-  }
-
-  .swiper-wrapper{
+.swipper_container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
     border-radius: 16px;
     background: #faf6fd;
     box-shadow:
         10px 10px 30px #d5d1d7,
         -10px -10px 30px #ffffff;
-    li{
-        @include d-flex(column, center, center);
-        img{   
-            width: 500px;
-            height: 500px;
-            object-fit: contain;
+    gap: 1rem;
+    .slider1 {
+        width: 100%;
+    }
+}
+
+.swiper {
+    aspect-ratio: 16/9;
+    width: 330px;
+    height: 350px;
+    h4 {
+        padding: 1rem;
+        margin: .5rem 0 1.5rem 0
+    }
+}
+
+.swiper-wrapper {
+    li {
+        .card_image {
+            display: flex;
+            justify-content: center;
+            margin-block-end: 1rem;
+            img {
+                width: 130px;
+                height: 130px;
+                object-fit: contain;
+                
+                
+            }
+        }
+        .card_info {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            a {
+                text-align: center;
+                font-size: 0.8rem;
+                overflow: hidden;
+                @include a-hover(blue);
+            }
+            p {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                
+                font-size: 1.3rem;
+                span{
+                    font-size: 1rem;
+                }
+            }
         }
     }
-  }
+}

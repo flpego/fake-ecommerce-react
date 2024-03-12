@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { ProductsContext } from '../context/ProductsContext';
 import RenderProducts from './RenderProducts';
+import Slider from './SliderMain';
+
 import { FilterProductsForm } from './FilterProductsForm';
 
 export const ProductsList = () => {
@@ -31,6 +33,7 @@ export const ProductsList = () => {
 
     return (
         <div className='productList_container' >
+        <Slider />
             <div className='productList_header'>
                 <FilterProductsForm
                     categories={categories}
@@ -38,8 +41,7 @@ export const ProductsList = () => {
                     setCategoryValue={setCategoryValue}
                     handleSubmit={handleSubmit}
                 />
-                <p>Blog</p>
-                <p>About Us</p>
+
             </div>
             <div>
                 <RenderProducts productsList={originalProducts} />

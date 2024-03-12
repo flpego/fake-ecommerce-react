@@ -20,9 +20,9 @@ export const ProductCards = ({ productId, title, image, price }) => {
    }
 
   return (
-    <div key={productId} loading="lazy">
-      <p>{title}</p>
-      <img src={image} alt="" className='image' />
+    <div key={productId}  className="product_cards">
+      <h4>{title.length > 20 ? title.substring(0, 30) + "..." : title}</h4>
+      <img src={image} alt="" className='image' loading="lazy"/>
       <p>$ {price}</p>
       <button onClick={() => { handleClick(productId) }}>View Details</button>
       <ProductModal product={product} visible={modalVisible} onClose={() => setModalVisible(false)} />
