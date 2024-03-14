@@ -1,0 +1,93 @@
+
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse; /* Para fusionar los bordes de las celdas */
+    border-radius: 15px;
+    overflow: hidden; /* Para ocultar cualquier contenido que se desborde */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+thead th,
+tbody td {
+    padding: 1rem;
+    text-align: center;
+}
+
+thead th {
+    background-color: #f0f0f0;
+
+
+}
+
+tbody {
+    background-color: #f0f0f0;
+}
+
+tfoot td {
+    font-weight: bold;
+    background-color: #f0f0f0;
+
+
+}
+
+
+.cart_quantity button {
+    background-color: transparent;
+    margin-inline: .5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cart_quantity button:hover {
+    color: #007bff; /* Cambia el color al pasar el ratón */
+}
+
+/* Estilos para la columna de producto */
+.cart_info_td {
+    display: flex;
+    align-items: center;
+    button {
+        i {
+            padding: 0 .5rem;
+            font-size: 1rem;
+            &:hover{
+            color: rgb(255, 30, 30);
+
+            }
+        }
+    }
+}
+
+.cart_info_td img {
+    width: 50px; /* Ajusta el tamaño de las imágenes */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    border-radius: 100vmax;
+}
+
+/* Estilos para el mensaje de "Sin productos" */
+.sin_productos {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgb(57, 134, 201);
+    border-radius: 100vmax;
+    color: white;
+    border-radius: 15px;
+}
+
+/* Estilos para el pie de tabla */
+tfoot td {
+    text-align: right; 
+    padding: 1rem; 
+    
+}
+
+.btn_comprar{
+    text-align: right; 
+    background-color: $color-naranja-claro;
+    padding: .5rem 1rem;
+    border-radius: 15px;
+    font-weight: 500;
+    @include a-hover(rgb(26, 26, 26))
+}

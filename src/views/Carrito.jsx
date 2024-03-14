@@ -24,7 +24,7 @@ function Carrito() {
         <tbody>
           {cart.length == 0 ? (
             <tr>
-              <td colSpan="3">No hay productos en el carrito</td>
+              <td colSpan="3" className='sin_productos'>No hay productos en el carrito</td>
             </tr>
           ) : cart.map((product) =>
             <CartTableRow key={product.id} productId={product.id} title={product.title} image={product.image} price={product.price}  quantity={product.quantity}  />
@@ -32,8 +32,13 @@ function Carrito() {
         </tbody>
         <tfoot>
           <tr>
-            <td colSpan="2">Total</td>
+            <td colSpan="2">Total $ </td>
             <td>{total}</td>
+          </tr>
+          <tr >
+            <td colSpan="3">
+              <button className='btn_comprar'>Comprar</button>
+            </td>
           </tr>
         </tfoot>
       </table>

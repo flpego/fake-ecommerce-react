@@ -16,7 +16,7 @@ export const AddToCartBtn = ({ product }) => {
 
 
     return (
-        <button className="submit" onClick={() => addToCart(product)}>
+        <button className="btn_addToCart" onClick={() => addToCart(product)}>
             Add to Cart
             <i className="fa-solid fa-cart-plus"></i>
         </button>

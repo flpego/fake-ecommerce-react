@@ -9,11 +9,11 @@ import "swiper/css/navigation";
 
 // import styles bundle
 import 'swiper/css/bundle';
+import { Link } from "react-router-dom";
 
 function Slider() {
     const { productsList } = useContext(ProductsContext);
     const filterProducts = productsList.filter((product) => product.category === "electronics");
-
     useEffect(() => {
         const swiper = new Swiper('.swiper', {
             // configure Swiper to use modules
@@ -52,24 +52,28 @@ function Slider() {
 
         <div className="swipper_container">
             <div className="swiper slider1">
-            <h4> Ofertas de la semana</h4>
+                <h4> Ofertas de la semana</h4>
                 <div className="swiper-wrapper">
                     {
                         filterProducts.map((product, index) => {
-                            return (<li key={product.id} className="swiper-slide" >
-                                <div className="card_image">
+                            return (
+                                <Link to={`/product/${product.id}` } className="swiper-slide">
 
-                                    <img src={product.image} alt="" loading="lazy" />
-                                </div>
-                                <div className="card_info">
+                                    <li key={product.id} className="swiper-slide" >
+                                        <div className="card_image">
 
-                                    <a>{product.title.length > 20 ? product.title.substring(0, 30) + "..." : product.title} </a>
-                                    <p>$ {product.price} <span>en 6x {(product.price / 6).toFixed(2)}</span></p>
-                                    
-                                </div>
+                                            <img src={product.image} alt="" loading="lazy" />
+                                        </div>
+                                        <div className="card_info">
+
+                                            <a>{product.title.length > 20 ? product.title.substring(0, 30) + "..." : product.title} </a>
+                                            <p>$ {product.price} <span>en 6x {(product.price / 6).toFixed(2)}</span></p>
+
+                                        </div>
 
 
-                            </li>)
+                                    </li>
+                                </Link>)
                         })
                     }
 

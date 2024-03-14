@@ -2,3 +2,31 @@
     height: 600px;
     object-fit: contain;
 }
+
+
+.span-blue {
+    color: rgb(30, 30, 255);
+    font-size: .8rem;
+}
+
+.span-green {
+    color: rgb(14, 184, 14);
+}
+
+.btn_addToCart{
+    width: 100%;
+    padding: .5rem ;
+    background: #3483FA;
+    color: $color-blanco;
+    border-radius: 8px;
+    cursor: pointer;
+    &:hover{
+        background-color: #2968C8;
+    }
+
+
+    i{
+        font-size: 1rem;
+        padding: 0 .3rem;
+    }
+}

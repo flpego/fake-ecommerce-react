@@ -17,7 +17,7 @@ function Header() {
 
                 <Link to="/">Inicio</Link>
                 Mi cuenta
-                <Link to="/carrito">Carrito <span><i className="fa-solid fa-cart-plus"></i>{cart.length}</span></Link>
+                <Link to="/carrito">Carrito <span className="btn_addToCart"><i className="fa-solid fa-cart-plus"></i>{cart.length}</span></Link>
             </nav>
 
         </header>

@@ -1,0 +1,35 @@
+.single_product_container {
+    background-color: $color-blanco;
+    margin: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 2rem;
+}
+
+.single_product_image {
+
+    img {
+        max-width: 100%;
+        width: auto;
+        max-height: 100vh;
+        padding: 1rem;
+        border-radius: 25px;
+    }
+}
+
+.single_product_info{
+    margin-block: 1rem;
+    margin-inline-end: 1rem;
+    p {
+    margin-block: 1rem;
+
+    }
+}
+
+.price {
+    font-size: 2rem;
+
+}

@@ -9,19 +9,19 @@ export const CartTableRow = ({ productId, title, image, price, quantity }) => {
     };
 
     return (
-        <tr key={productId}>
-            <td>
-                <button onClick={() => removeProductFromCart(productId)}>X</button>
+        <tr key={productId} className="cart_tr">
+            <td className="cart_info_td">
+                <button onClick={() => removeProductFromCart(productId)}><i class="fa-solid fa-trash-can"></i></button>
                 
                 <img src={image} alt="" className="image" /> - {title}
             </td>
-            <td>
+            <td className="cart_quantity"> 
                 <button onClick={() => updatePrice(productId, quantity - 1)}>-</button>
                 <span>{quantity}</span>
                 <button onClick={() => updatePrice(productId, quantity + 1)}>+</button>
             </td>
-            <td>
-                {price * quantity}
+            <td >
+              $  {price * quantity}
             </td>
         </tr>
     );
