@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { AddToCartBtn } from "../components/AddToCartBtn";
 import { fetchSingleProduct } from "../api/fetchProducts"
 import { useEffect, useState } from "react";
+import { RatingStars } from "../components/RatingStars";
 
 function Product() {
 
@@ -38,7 +39,8 @@ function Product() {
                     <div className="single_product_info">
 
                         <h2>{product.title}</h2>
-                        <p>{product.rating.rate}</p>
+                        <RatingStars rateProp={product.rating.rate}/>
+
                         <p> <span className="price">$ {product.price}  /</span>
                             <span className="span-green">Mismo precio en 3 cuotas de <span className="price">
                                 $ {(product.price / 3).toFixed(2)}

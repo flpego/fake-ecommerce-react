@@ -1,5 +1,5 @@
 
-import { ProductsList } from './components/ProductList'
+import { ProductMain } from './components/ProductMain'
 import { ProductsProvider } from './context/ProductsContext'
 import Header from './views/Header'
 import { Routes, Route } from "react-router-dom"
@@ -14,7 +14,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<ProductsList />}  />
+        <Route path="/" element={<ProductMain />}  />
         <Route path="/carrito" element={<Carrito />} />
         <Route exact path='/product/:productId' element={<Product />} />
       </Routes>

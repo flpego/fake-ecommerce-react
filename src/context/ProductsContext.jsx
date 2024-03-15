@@ -1,6 +1,8 @@
 import { useEffect, createContext, useState } from "react";
 import { fetchProducts } from "../api/fetchProducts";
 
+import ErrorPage from "../components/ErrorPage"; 
+
 export const ProductsContext = createContext(); //creamos contexto
 
 export const ProductsProvider = ({ children }) => {
@@ -8,7 +10,10 @@ export const ProductsProvider = ({ children }) => {
     const [productsList, setProductsList] = useState([]);
     const [categories, setCategories] = useState([]);
     const [cart, setCart] = useState([]);
-    const [total, setTotal] = useState(0)
+    const [total, setTotal] = useState(0);
+
+
+    const [error, setError] = useState(null);
 
 
     const removeProductFromCart = (productId) => {
@@ -38,8 +43,13 @@ export const ProductsProvider = ({ children }) => {
     //cuando carga la app, hace la llamada a la Api
     useEffect(() => {
         const fetchDataProducts = async () => {
-            const data = await fetchProducts();
-            setProductsList(data)
+            try {
+                const data = await fetchProducts();
+                setProductsList(data);
+            } catch (error) {
+                console.error('Error fetching products:', error);
+                 setError(error); 
+            }
         };
         fetchDataProducts();
     }, []);
@@ -64,7 +74,11 @@ export const ProductsProvider = ({ children }) => {
 
     return (
         <ProductsContext.Provider value={productContextValue} >
-            {children}
+            {error ? ( // Verifica si hay un error y renderiza la página de error si es así
+                <ErrorPage error={error} />
+            ) : (
+                children // Renderiza los hijos normales si no hay error
+            )}
         </ProductsContext.Provider>
     )
 }

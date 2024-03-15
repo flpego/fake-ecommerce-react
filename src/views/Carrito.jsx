@@ -12,7 +12,8 @@ function Carrito() {
 
   return (
     <div>
-      <table>
+      {cart.length === 0 ? (<h1 className='sin_productos'>No hay productos en el carrito</h1>
+      ) : <table>
         <thead>
           <tr>
             <th>Producto</th>
@@ -24,10 +25,10 @@ function Carrito() {
         <tbody>
           {cart.length == 0 ? (
             <tr>
-              <td colSpan="3" className='sin_productos'>No hay productos en el carrito</td>
+              <td colSpan="3" className='sin_productos'></td>
             </tr>
           ) : cart.map((product) =>
-            <CartTableRow key={product.id} productId={product.id} title={product.title} image={product.image} price={product.price}  quantity={product.quantity}  />
+            <CartTableRow key={product.id} productId={product.id} title={product.title} image={product.image} price={product.price} quantity={product.quantity} />
           )}
         </tbody>
         <tfoot>
@@ -37,11 +38,12 @@ function Carrito() {
           </tr>
           <tr >
             <td colSpan="3">
-              <button className='btn_comprar'>Comprar</button>
+              <button className='btn_comprar'>Comprar <i class="fa-solid fa-dollar-sign"></i>{total}</button>
             </td>
           </tr>
         </tfoot>
       </table>
+      }
 
     </div>
   )

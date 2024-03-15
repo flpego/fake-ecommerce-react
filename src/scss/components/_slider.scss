@@ -19,10 +19,16 @@
     height: 350px;
     h4 {
         padding: 1rem;
-        margin: .5rem 0 1.5rem 0
     }
 }
 
+.swiper-button-next{
+    @include a-hover(#0056b3);
+}
+.swiper-button-prev{
+    @include a-hover(#0056b3);
+
+}
 .swiper-wrapper {
     li {
         .card_image {
@@ -44,16 +50,24 @@
             justify-content: center;
 
             a {
+                color: #333;
+
                 text-align: center;
                 font-size: 0.8rem;
                 overflow: hidden;
                 @include a-hover(blue);
             }
+            i {
+                text-align: center;
+            }
+            div {
+                margin: 0 auto;
+            }
             p {
                 display: flex;
                 flex-direction: column;
                 text-align: center;
-                
+                color: #333;
                 font-size: 1.3rem;
                 span{
                     font-size: 1rem;

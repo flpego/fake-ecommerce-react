@@ -68,12 +68,15 @@ tfoot td {
 
 /* Estilos para el mensaje de "Sin productos" */
 .sin_productos {
+    width: 80%;
     text-align: center;
     padding: 2rem;
+    margin: 0 auto;
     background-color: rgb(57, 134, 201);
     border-radius: 100vmax;
     color: white;
     border-radius: 15px;
+    font-weight: 400;
 }
 
 /* Estilos para el pie de tabla */

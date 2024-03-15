@@ -1,22 +1,56 @@
 header {
     background: $color-naranja-claro;
+    max-height: 5rem;
     padding: 1rem;
     margin-block-end: 1.5rem;
     display: flex;
     justify-content: space-around;
     font-size: 1.1rem;
     div {
+        width: 50%;
         display: flex;
         justify-content: space-around;
-        width:50%
+        align-items: center;
+        a {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            img {
+                width: 50%;
+                height: 70px;
+            }
+        }
     }
     nav {
-        width:40%;
+        width: 40%;
         @include d-flex(row, center, space-around);
+        span {
+            padding: 0.5rem;
+            background: #3483fa;
+            color: $color-blanco;
+            border-radius: 8px;
+            cursor: pointer;
+            &:hover {
+                background-color: #2968c8;
+            }
 
+            i {
+                font-size: 1rem;
+                padding: 0 0.3rem;
+            }
+        }
         a {
+            @include d-flex(row, center, space-around);
+            gap: 10px;
             color: black;
-            font-weight: map-get($map: $font-weights, $key:semibold );
+            font-weight: map-get($map: $font-weights, $key: semibold);
+            transition: 0.5s;
+            &:hover {
+                border-bottom: 1px solid $color-amarillo;
+                color: #333;
+                scale: 1.001;
+            }
         }
     }
 }

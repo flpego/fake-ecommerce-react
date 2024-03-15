@@ -1,7 +1,6 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { ProductsContext } from "../context/ProductsContext"
-import SearchForm from "../components/SearchForm";
 
 function Header() {
     const { cart } = useContext(ProductsContext);
@@ -9,15 +8,17 @@ function Header() {
     return (
         <header>
         <div>
-            Logo
-            <SearchForm />
+            
+            <Link to="/"><img src="./src/assets/logo.png" alt="Logotipo" /></Link>
 
         </div>
             <nav>
 
                 <Link to="/">Inicio</Link>
                 Mi cuenta
-                <Link to="/carrito">Carrito <span className="btn_addToCart"><i className="fa-solid fa-cart-plus"></i>{cart.length}</span></Link>
+                <Link to="/carrito"> <a>Carrito</a> </Link>
+                <Link to="/carrito"> <span className=""><i className="fa-solid fa-cart-plus"></i>{cart.length}</span> </Link>
+                
             </nav>
 
         </header>

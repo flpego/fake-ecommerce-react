@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 // import styles bundle
 import 'swiper/css/bundle';
 import { Link } from "react-router-dom";
+import { RatingStars } from "./RatingStars";
 
 function Slider() {
     const { productsList } = useContext(ProductsContext);
@@ -67,7 +68,8 @@ function Slider() {
                                         <div className="card_info">
 
                                             <a>{product.title.length > 20 ? product.title.substring(0, 30) + "..." : product.title} </a>
-                                            <p>$ {product.price} <span>en 6x {(product.price / 6).toFixed(2)}</span></p>
+                                            <RatingStars rateProp={product.rating.rate}/>
+                                            <p>$ {product.price} <span className="span-green">en 6x {(product.price / 6).toFixed(2)}</span></p>
 
                                         </div>
 

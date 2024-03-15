@@ -5,7 +5,7 @@ import Slider from './SliderMain';
 
 import { FilterProductsForm } from './FilterProductsForm';
 
-export const ProductsList = () => {
+export const ProductMain = () => {
 
     const { productsList, categories } = useContext(ProductsContext); //recibe categorias y productos por context
 
@@ -31,10 +31,13 @@ export const ProductsList = () => {
         handleFilter(categoryValue);
     };
 
-    return (
-        <div className='productList_container' >
-        <Slider />
-            <div className='productList_header'>
+    return (<>
+
+        <div className='products_main' >
+            <Slider />
+
+
+            <div className='products_main_grid'>
                 <FilterProductsForm
                     categories={categories}
                     categoryValue={categoryValue}
@@ -42,10 +45,11 @@ export const ProductsList = () => {
                     handleSubmit={handleSubmit}
                 />
 
-            </div>
-            <div>
                 <RenderProducts productsList={originalProducts} />
             </div>
         </div>
+
+    </>
+
     );
 };

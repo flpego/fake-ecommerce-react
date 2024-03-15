@@ -1,0 +1,74 @@
+.filter_and_search_container {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+.filter_form {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .filter_form div {
+    display: flex;
+    align-items: center;
+
+  }
+  
+  .filter_form select {
+    padding: 0.5rem;
+    font-size: .8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    flex-grow: 1; /* El elemento se expande para llenar el espacio disponible */
+  }
+  
+  .filter_form button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter_form button:hover {
+    background-color: #0056b3; /* Cambia el color al pasar el ratón sobre el botón */
+  }
+  
+
+  .search_form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search_form input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    &:focus{
+        outline: none;
+        border: 1px solid #007bff;
+    }
+  }
+  
+  .search_form button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search_form button:hover {
+    background-color: #0056b3;
+  }

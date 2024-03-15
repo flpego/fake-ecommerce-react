@@ -1,13 +1,15 @@
-import React from 'react'
 
 function SearchForm() {
     return (
 
-        <>
-            <form>
+        <><div>
+            <label htmlFor="">Buscar</label>
+            <form className='search_form'>
                 <input type="text" />
-                <button>Buscar</button>
+                <button><i className="fa-solid fa-magnifying-glass"></i></button>
             </form>
+        </div>
+
         </>
     )
 }
