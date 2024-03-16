@@ -1,0 +1,34 @@
+footer{
+    background-color: $color-naranja-claro;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    bottom: 0;
+}
+
+.footer_grid_container {
+    margin: 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer_list_container{
+    ul{
+        list-style: none;
+        li{
+            a{
+                color: #333;
+                font-weight: 500;
+                &:hover{
+                    scale: 1.1;
+                    color: beige;
+                }
+            }
+        }
+    }
+}

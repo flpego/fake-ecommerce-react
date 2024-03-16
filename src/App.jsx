@@ -5,6 +5,7 @@ import Header from './views/Header'
 import { Routes, Route } from "react-router-dom"
 import Carrito from "./views/Carrito"
 import Product from './views/Product'
+import Footer from './views/Footer'
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
         <Route exact path='/product/:productId' element={<Product />} />
       </Routes>
       </ProductsProvider>
-
+    <Footer />
     </div>
   )
 }

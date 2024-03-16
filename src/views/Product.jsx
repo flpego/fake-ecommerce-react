@@ -34,7 +34,7 @@ function Product() {
             {product && ( // comprobamos que product no sea Null
                 <div className="single_product_container">
                     <div className="single_product_image">
-                        <img src={product.image} alt="" />
+                        <img src={product.image} alt="" loading="lazy"/>
                     </div>
                     <div className="single_product_info">
 

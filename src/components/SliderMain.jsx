@@ -54,7 +54,7 @@ function Slider() {
         <div className="swipper_container">
             <div className="swiper slider1">
                 <h4> Ofertas de la semana</h4>
-                <div className="swiper-wrapper">
+                <div className="swiper-wrapper" key={1}>
                     {
                         filterProducts.map((product, index) => {
                             return (

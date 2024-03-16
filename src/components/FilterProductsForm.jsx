@@ -13,7 +13,7 @@ export const FilterProductsForm = ({ categories, categoryValue, setCategoryValue
                     <button type="submit"><i className="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </form>
-            <SearchForm />
+            <SearchForm onSubmit={handleSubmit}/>
         </div>
 
     );

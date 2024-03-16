@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ProductsContext } from '../context/ProductsContext'
 import { CartTableRow } from '../components/CartTable';
+import Slider from '../components/SliderMain';
 
 function Carrito() {
   const { cart, total } = useContext(ProductsContext);
@@ -12,7 +13,10 @@ function Carrito() {
 
   return (
     <div>
-      {cart.length === 0 ? (<h1 className='sin_productos'>No hay productos en el carrito</h1>
+      {cart.length === 0 ? (<div>
+        <h1 className='sin_productos'>No hay productos en el carrito</h1>
+      <Slider />
+      </div> 
       ) : <table>
         <thead>
           <tr>
