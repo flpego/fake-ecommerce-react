@@ -9,14 +9,14 @@ function Header() {
         <header>
         <div>
             
-            <Link to="/"><img src="./src/assets/logo.png" alt="Logotipo" /></Link>
+            <Link to="/"><img src="/src/assets/logo.png" alt="Logotipo" /></Link>
 
         </div>
             <nav>
 
                 <Link to="/">Inicio</Link>
                 Mi cuenta
-                <Link to="/carrito"> <a>Carrito</a> </Link>
+                <Link to="/carrito"> Carrito </Link>
                 <Link to="/carrito"> <span className=""><i className="fa-solid fa-cart-plus"></i>{cart.length}</span> </Link>
                 
             </nav>

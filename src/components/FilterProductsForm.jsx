@@ -3,6 +3,7 @@ import SearchForm from "./SearchForm";
 export const FilterProductsForm = ({ categories, categoryValue, setCategoryValue, handleSubmit }) => {
     return (
         <div className="filter_and_search_container">
+        <h2>Busca nuestros productos</h2>
             <form onSubmit={handleSubmit} className="filter_form">
                 <label htmlFor="">Filtrar</label>
                 <div>

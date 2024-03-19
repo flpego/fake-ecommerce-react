@@ -15,7 +15,7 @@ function SearchForm({onSubmit}) {
         <div>
             <label htmlFor="">Buscar</label>
             <form className='search_form' onSubmit={onSubmit}>
-                <input type="text" value={inputValue} onChange={ handleChange}/>
+                <input type="text" value={inputValue} onChange={ handleChange} placeholder="Busca un producto..."/>
                 <button><i className="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>

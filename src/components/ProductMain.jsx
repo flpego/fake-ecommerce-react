@@ -36,6 +36,7 @@ export const ProductMain = () => {
         <div className='products_main' >
             <Slider />
 
+            <h2>Ofertas de Temporada</h2>
 
             <div className='products_main_grid'>
                 <FilterProductsForm

@@ -6,7 +6,7 @@ function Footer() {
             <div className="footer_grid_container">
                 <div>
                     <h3>Contacto</h3>
-                    <p>Email: info@miempresa.com</p>
+                    <p>Email: famarket@fakemarket.com</p>
                     <p>Teléfono: +1234567890</p>
                 </div>
                 <div className='footer_list_container'>
@@ -19,13 +19,13 @@ function Footer() {
                         <li><a href="#">Contacto</a></li>
                     </ul>
                 </div>
-                <div className='footer_list_container'>
+                <div className='footer_list_container footer_icons_container'>
                     <h3>Redes sociales</h3>
-                    <ul>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">LinkedIn</a></li>
+                    <ul className='footer_icons_container'>
+                        <li><a href="#"><i className="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#"><i className="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="#"><i className="fa-brands fa-square-instagram"></i> </a></li>
+                        <li><a href="#"><i className="fa-brands fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
