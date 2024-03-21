@@ -1,7 +1,13 @@
-
+.cart_div_container{
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
 table {
-    width: 80%;
-    margin: auto;
+    width: 100%;
     border-collapse: collapse; /* Para fusionar los bordes de las celdas */
     border-radius: 15px;
     overflow: hidden; /* Para ocultar cualquier contenido que se desborde */
@@ -10,7 +16,7 @@ table {
 
 thead th,
 tbody td {
-    padding: 1rem;
+    padding: .6rem;
     text-align: center;
 }
 
@@ -28,6 +34,8 @@ tfoot td {
     font-weight: bold;
     background-color: #f0f0f0;
 
+    text-align: right; 
+    padding: 1rem;    
 
 }
 
@@ -58,13 +66,13 @@ tfoot td {
             }
         }
     }
+    img {
+        width: 50px; /* Ajusta el tamaño de las imágenes */
+        margin-right: 10px; /* Espacio entre la imagen y el texto */
+        border-radius: 100vmax;
+    }
 }
 
-.cart_info_td img {
-    width: 50px; /* Ajusta el tamaño de las imágenes */
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
-    border-radius: 100vmax;
-}
 
 /* Estilos para el mensaje de "Sin productos" */
 .sin_productos {
@@ -79,12 +87,7 @@ tfoot td {
     font-weight: 400;
 }
 
-/* Estilos para el pie de tabla */
-tfoot td {
-    text-align: right; 
-    padding: 1rem; 
-    
-}
+
 
 .btn_comprar{
     text-align: right; 

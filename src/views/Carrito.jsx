@@ -12,14 +12,14 @@ function Carrito() {
 
 
   return (
-    <div>
+    <div className='cart_div_container'>
       {cart.length === 0 ? (<div>
         <h1 className='sin_productos'>No hay productos en el carrito</h1>
       <Slider />
       </div> 
       ) : <table>
         <thead>
-          <tr>
+          <tr className='cart_tr'>
             <th>Producto</th>
             <th>Cantidad</th>
             <th>Precio</th>

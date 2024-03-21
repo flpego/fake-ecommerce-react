@@ -1,0 +1,26 @@
+@media (max-width: 460px) {
+	.cart_div_container{
+        width: 100%;
+    }
+    thead{
+        display: none;
+    }
+    .cart_info_td {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    tfoot{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        background-color: #f0f0f0;
+    }
+    .cart_tr{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 1fr 1fr;
+    }
+}

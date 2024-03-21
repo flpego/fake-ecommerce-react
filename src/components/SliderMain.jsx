@@ -1,15 +1,13 @@
 import { useContext, useEffect } from "react"
 import { ProductsContext } from "../context/ProductsContext";
+import { Link } from "react-router-dom";
 import Swiper from 'swiper';
 import { Navigation, Scrollbar } from 'swiper/modules';
 import "swiper/css";
+import "swiper/scss/autoplay";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// import Swiper bundle with all modules installed
-
-// import styles bundle
 import 'swiper/css/bundle';
-import { Link } from "react-router-dom";
 import { RatingStars } from "./RatingStars";
 
 function Slider() {
@@ -18,15 +16,11 @@ function Slider() {
     useEffect(() => {
         const swiper = new Swiper('.swiper', {
             // configure Swiper to use modules
-            slidesPerView: 3,
             spaceBetween: 10,
             modules: [Navigation, Scrollbar],
             direction: 'horizontal',
             loop: false,
-            autoplay: {
-                delay: 3000,
-            },
-            // If we need pagination
+    
             pagination: {
                 el: '.swiper-pagination',
             },
@@ -41,6 +35,23 @@ function Slider() {
             scrollbar: {
                 el: '.swiper-scrollbar',
             },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                  },
+                  // when window width is >= 480px
+                  480: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                  },
+                  // when window width is >= 640px
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 40
+                  }
+            }
+
         });
 
 
@@ -67,7 +78,7 @@ function Slider() {
                                         </div>
                                         <div className="card_info">
 
-                                            <a>{product.title.length > 20 ? product.title.substring(0, 30) + "..." : product.title} </a>
+                                            <span className="span_descriptions" >{product.title.length > 20 ? product.title.substring(0, 30) + "..." : product.title} </span >
                                             <RatingStars rateProp={product.rating.rate}/>
                                             <p>$ {product.price} <span className="span-green">en 6x {(product.price / 6).toFixed(2)}</span></p>
 

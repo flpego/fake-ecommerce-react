@@ -15,7 +15,7 @@
     color: rgb(14, 184, 14);
 }
 
-.span_underline{
+.span_underline {
     text-decoration: underline;
 }
 
@@ -35,18 +35,8 @@
         padding: 0 0.3rem;
     }
 }
-
-@keyframes slideDown {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    50% {
-        transform: translateY(10%);
-    }
-    100% {
-        opacity: 1;
-    }
+.span_descriptions {
+    text-align: center;
+    font-size: 0.8rem;
+    overflow: hidden;
 }
-
-

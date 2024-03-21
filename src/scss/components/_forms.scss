@@ -40,10 +40,16 @@
     background-color: #0056b3; /* Cambia el color al pasar el ratón sobre el botón */
   }
   
+  .search_form_container{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
 
+  }
   .search_form {
     display: flex;
     align-items: center;
+    margin-bottom: .5rem;
   }
   
   .search_form input {
@@ -71,4 +77,20 @@
   
   .search_form button:hover {
     background-color: #0056b3;
+  }
+
+  .suggestions{
+    background-color: #fff;
+    padding: .5rem;
+    border-radius: 10px;
+    li{
+      padding: .5rem;
+      transition: .2s;
+      border-radius: 10px;
+
+      &:hover{
+        cursor: pointer;
+        background-color: #007bff;
+      }
+    }
   }
