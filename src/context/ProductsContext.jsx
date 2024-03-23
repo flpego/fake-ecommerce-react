@@ -47,7 +47,7 @@ export const ProductsProvider = ({ children }) => {
                 const data = await fetchProducts();
                 setProductsList(data);
             } catch (error) {
-                console.error('Error fetching products:', error);
+                console.log('Error fetching products:', error);
                  setError(error); 
             }
         };
@@ -68,6 +68,7 @@ export const ProductsProvider = ({ children }) => {
         setCart,
         setTotal,
         total,
+        error,
         removeProductFromCart,
         updateQuantity
     }

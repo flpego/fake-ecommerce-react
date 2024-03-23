@@ -40,3 +40,10 @@
     font-size: 0.8rem;
     overflow: hidden;
 }
+
+.div_center_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
