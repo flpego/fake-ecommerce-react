@@ -1,0 +1,24 @@
+.loader_container {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.wheel{
+    border: 10px solid $color-naranja-oscuro;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border-left-color: transparent;
+    animation: turn 1s linear infinite;
+}
+
+@keyframes turn {
+    0% {
+        transform: rotate(0deg);
+
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

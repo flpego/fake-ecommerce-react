@@ -4,10 +4,11 @@ import RenderProducts from './RenderProducts';
 import Slider from './SliderMain';
 import { FilterProductsForm } from './FilterProductsForm';
 import SearchForm from './SearchForm';
+import { Loader } from './Loader';
 
 export const ProductMain = () => {
 
-    const { productsList, categories } = useContext(ProductsContext); //recibe categorias y productos por context
+    const { productsList, categories, loader } = useContext(ProductsContext); //recibe categorias y productos por context   
 
     const [originalProducts, setOriginalProducts] = useState(productsList); //estado para controlar la lista de productos
     const [categoryValue, setCategoryValue] = useState("1"); //estado para manejar los filtros
@@ -35,45 +36,47 @@ export const ProductMain = () => {
 
     const handleSearchSubmit = (searchValue) => {
         const searchedData = productsList.filter((product) =>
-        product.title.toLowerCase().includes(searchValue.toLowerCase())
-      );
+            product.title.toLowerCase().includes(searchValue.toLowerCase())
+        );
         setOriginalProducts(searchedData);
     };
 
-    const handleSearchChange = (searchValue) => { 
+    const handleSearchChange = (searchValue) => {
         const suggestions = productsList
-        .filter((product) => product.title.toLowerCase().includes(searchValue.toLowerCase()))
-        .map((product) => product.title);
+            .filter((product) => product.title.toLowerCase().includes(searchValue.toLowerCase()))
+            .map((product) => product.title);
         setSearchSuggestions(suggestions)
-     }
+    }
 
     return (<>
+        {loader ? (<Loader />) : (
+            <div className='products_main' >
+                <Slider />
 
-        <div className='products_main' >
-            <Slider />
+                <h2>Ofertas de Temporada</h2>
 
-            <h2>Ofertas de Temporada</h2>
+                <div className='products_main_grid'>
+                    <div>
+                        <FilterProductsForm
+                            categories={categories}
+                            categoryValue={categoryValue}
+                            setCategoryValue={setCategoryValue}
+                            handleSubmit={handleFilterSubmit}
+                        />
+                        <SearchForm
+                            handleSubmit={handleSearchSubmit}
+                            suggestions={searchSuggestions}
+                            handleChange={handleSearchChange}
+                        />
 
-            <div className='products_main_grid'>
-                <div>
-                    <FilterProductsForm
-                        categories={categories}
-                        categoryValue={categoryValue}
-                        setCategoryValue={setCategoryValue}
-                        handleSubmit={handleFilterSubmit}
-                    />
-                    <SearchForm 
-                    handleSubmit={handleSearchSubmit}
-                    suggestions={searchSuggestions}
-                    handleChange={handleSearchChange}
-                    />
+                    </div>
 
+
+                    <RenderProducts productsList={originalProducts} />
                 </div>
-
-
-                <RenderProducts productsList={originalProducts} />
             </div>
-        </div>
+        )}
+
 
     </>
 

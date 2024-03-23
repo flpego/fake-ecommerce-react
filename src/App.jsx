@@ -9,15 +9,16 @@ import Footer from './views/Footer'
 
 function App() {
 
+
   return (
     <div className="App">
     <ProductsProvider>
     {<Header />}
-
       <Routes>
         <Route path="/" element={<ProductMain />}  />
         <Route path="/carrito" element={<Carrito />} />
         <Route exact path='/product/:productId' element={<Product />} />
+        
       </Routes>
       </ProductsProvider>
     <Footer />

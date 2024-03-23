@@ -1,7 +1,7 @@
 import { useEffect, createContext, useState } from "react";
 import { fetchProducts } from "../api/fetchProducts";
 
-import ErrorPage from "../components/ErrorPage"; 
+import ErrorPage from "../components/ErrorPage";
 
 export const ProductsContext = createContext(); //creamos contexto
 
@@ -11,6 +11,10 @@ export const ProductsProvider = ({ children }) => {
     const [categories, setCategories] = useState([]);
     const [cart, setCart] = useState([]);
     const [total, setTotal] = useState(0);
+    const [loader, setLoader] = useState(false)
+
+    
+    
 
 
     const [error, setError] = useState(null);
@@ -33,22 +37,22 @@ export const ProductsProvider = ({ children }) => {
 
 
     useEffect(() => {
-        
-            const totalPrice = cart.reduce((acc, product) => acc + (product.price *product.quantity), 0);
-            setTotal(totalPrice);
-
+        const totalPrice = cart.reduce((acc, product) => acc + (product.price * product.quantity), 0);
+        setTotal(totalPrice);
     }, [cart]);
 
 
     //cuando carga la app, hace la llamada a la Api
     useEffect(() => {
+        setLoader(true);
         const fetchDataProducts = async () => {
             try {
                 const data = await fetchProducts();
                 setProductsList(data);
+                setLoader(false);
             } catch (error) {
                 console.log('Error fetching products:', error);
-                 setError(error); 
+                setError(error);
             }
         };
         fetchDataProducts();
@@ -70,7 +74,8 @@ export const ProductsProvider = ({ children }) => {
         total,
         error,
         removeProductFromCart,
-        updateQuantity
+        updateQuantity,
+        loader
     }
 
     return (

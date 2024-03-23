@@ -3,6 +3,7 @@ import { AddToCartBtn } from "../components/AddToCartBtn";
 import { fetchSingleProduct } from "../api/fetchProducts"
 import { useEffect, useState } from "react";
 import { RatingStars } from "../components/RatingStars";
+import { Loader } from "../components/Loader";
 
 function Product() {
 
@@ -31,7 +32,7 @@ function Product() {
 
     return (
         <>
-            {product && ( // comprobamos que product no sea Null
+            {product ? ( // comprobamos que product no sea Null
                 <div className="single_product_container">
                     <div className="single_product_image">
                         <img src={product.image} alt="" loading="lazy"/>
@@ -61,7 +62,7 @@ function Product() {
 
                     </div>
                 </div>
-            )}
+            ) : <Loader />}
 
 
 
