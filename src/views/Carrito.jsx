@@ -42,7 +42,7 @@ function Carrito() {
           </tr>
           <tr >
             <td colSpan="3">
-              <button className='btn_comprar'>Comprar <i class="fa-solid fa-dollar-sign"></i>{total}</button>
+              <button className='btn_comprar'>Comprar <i className="fa-solid fa-dollar-sign"></i>{total}</button>
             </td>
           </tr>
         </tfoot>

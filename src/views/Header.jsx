@@ -7,18 +7,18 @@ function Header() {
 
     return (
         <header>
-        <div>
-            
-            <Link to="/">Logo</Link>
+            <div className="nav_logo_container">
 
-        </div>
+
+                <Link to="/"><img className="nav_logo" src="/public/images/logo.png" alt="FakeMarket Logo" /></Link>
+            </div>
             <nav>
 
                 <Link to="/">Inicio</Link>
                 Mi cuenta
                 <Link to="/carrito"> Carrito </Link>
                 <Link to="/carrito"> <span className=""><i className="fa-solid fa-cart-plus"></i>{cart.length}</span> </Link>
-                
+
             </nav>
 
         </header>

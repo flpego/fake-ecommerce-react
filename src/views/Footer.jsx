@@ -5,6 +5,7 @@ function Footer() {
         <footer>
             <div className="footer_grid_container">
                 <div>
+                <img className="nav_logo" src="/public/images/logo.png" alt="FakeMarket Logo" />
                     <h3>Contacto</h3>
                     <p>Email: famarket@fakemarket.com</p>
                     <p>Teléfono: +1234567890</p>

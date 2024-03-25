@@ -15,6 +15,8 @@ export const ProductMain = () => {
     //estado para mostrar sugerencia
     const [searchSuggestions, setSearchSuggestions] = useState([]);
 
+    const [title, setTitle] = useState("Todos los productos")
+
     useEffect(() => {
         setOriginalProducts(productsList);
     }, [productsList]);
@@ -32,6 +34,9 @@ export const ProductMain = () => {
     const handleFilterSubmit = (e) => {
         e.preventDefault();
         handleFilter(categoryValue);
+        setTitle(categoryValue==="1" ? "Todos los productos" :categoryValue.toLocaleUpperCase())
+        form.reset()
+
     };
 
     const handleSearchSubmit = (searchValue) => {
@@ -39,6 +44,7 @@ export const ProductMain = () => {
             product.title.toLowerCase().includes(searchValue.toLowerCase())
         );
         setOriginalProducts(searchedData);
+        setTitle(searchValue === "" ? "Todos los productos" :`Resultados de ${searchValue}...`)
     };
 
     const handleSearchChange = (searchValue) => {
@@ -48,12 +54,14 @@ export const ProductMain = () => {
         setSearchSuggestions(suggestions)
     }
 
+
+
     return (<>
         {loader ? (<Loader />) : (
             <div className='products_main' >
                 <Slider />
 
-                <h2>Ofertas de Temporada</h2>
+                <h2>{title}</h2>
 
                 <div className='products_main_grid'>
                     <div>
