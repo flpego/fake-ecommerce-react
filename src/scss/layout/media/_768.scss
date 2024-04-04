@@ -8,7 +8,9 @@
 
         }
     }
-
+.sub-header {
+    flex-direction: column;
+}
     .products_main_grid {
         grid-template-columns: 1fr;
     }
@@ -46,6 +48,7 @@
 
 
 @media (min-width: 769px) {
+
     .products_main_grid {
         grid-template-columns: 1fr 9fr;
     }

@@ -95,5 +95,8 @@ tfoot td {
     padding: .5rem 1rem;
     border-radius: 15px;
     font-weight: 500;
-    @include a-hover(rgb(26, 26, 26))
+    @include a-hover(rgb(26, 26, 26));
+    &:hover{
+        background-color: rgb(255, 115, 0);
+    }
 }

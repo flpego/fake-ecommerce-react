@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { ProductsContext } from '../context/ProductsContext'
 import { CartTableRow } from '../components/CartTable';
 import Slider from '../components/SliderMain';
@@ -15,8 +15,8 @@ function Carrito() {
     <div className='cart_div_container'>
       {cart.length === 0 ? (<div>
         <h1 className='sin_productos'>No hay productos en el carrito</h1>
-      <Slider />
-      </div> 
+        <Slider />
+      </div>
       ) : <table>
         <thead>
           <tr className='cart_tr'>
@@ -42,7 +42,7 @@ function Carrito() {
           </tr>
           <tr >
             <td colSpan="3">
-              <button className='btn_comprar'>Comprar <i className="fa-solid fa-dollar-sign"></i>{total}</button>
+              <button className='btn_comprar' onClick={() => setDisplayForm(true)}>Comprar <i className="fa-solid fa-dollar-sign"></i>{total}</button>
             </td>
           </tr>
         </tfoot>

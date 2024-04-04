@@ -64,7 +64,7 @@ export const ProductMain = () => {
                 <h2>{title}</h2>
 
                 <div className='products_main_grid'>
-                    <div>
+                    <div className='forms-container'>
                         <FilterProductsForm
                             categories={categories}
                             categoryValue={categoryValue}

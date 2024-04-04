@@ -1,27 +1,15 @@
 header {
     background: $color-naranja-claro;
-    padding: 1rem;
     margin-block-end: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
     font-size: 1.1rem;
     div {
         width: 50%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+
         a {
             display: flex;
             justify-content: space-around;
             align-items: center;
             width: 100%;
-            img {
-                width: 25%;
-                height: 70px;
-                left: 0;
-            }
         }
     }
     nav {
@@ -29,12 +17,11 @@ header {
         @include d-flex(row, center, space-around);
         span {
             padding: 0.5rem;
-            background: #3483fa;
             color: $color-blanco;
             border-radius: 8px;
             cursor: pointer;
             &:hover {
-                background-color: #2968c8;
+               color: #333;
             }
 
             i {
@@ -45,16 +32,32 @@ header {
         a {
             @include d-flex(row, center, space-around);
             gap: 10px;
-            color: black;
+            color: rgb(8, 8, 8);
             font-weight: map-get($map: $font-weights, $key: semibold);
-            transition: 0.5s;
+            transition: 0.3s;
             &:hover {
+                color: beige;
                 border-bottom: 1px solid $color-amarillo;
-                color: #333;
                 scale: 1.001;
             }
         }
     }
+}
+.top-header{
+    width: 100%;
+    text-align: center;
+    background-color: #34495e;
+    p {
+        color: $color-blanco;
+        font-size: .8rem;
+        padding: 5px;
+    }
+}
+.sub-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .nav_logo_container {
@@ -66,6 +69,7 @@ header {
     color: #333;
     width: 140px;
     height: 55px;
+    font-size: 1.3rem;
     font-weight: 500;
-    text-decoration: line-through;
+    text-shadow: 1px 1px 30px #333;
 }
