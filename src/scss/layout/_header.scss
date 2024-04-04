@@ -63,8 +63,9 @@ header {
 }
 
 .nav_logo{
-    background-image: url(/public/images/logo.png);
-    object-fit: contain;
+    color: #333;
     width: 140px;
     height: 55px;
+    font-weight: 500;
+    text-decoration: line-through;
 }

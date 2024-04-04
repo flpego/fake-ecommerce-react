@@ -8,9 +8,7 @@ function Header() {
     return (
         <header>
             <div className="nav_logo_container">
-
-
-                <Link to="/"><img className="nav_logo" src="/public/images/logo.png" alt="FakeMarket Logo" /></Link>
+                <Link to="/" className="nav_logo">FakE-Market</Link>
             </div>
             <nav>
 
