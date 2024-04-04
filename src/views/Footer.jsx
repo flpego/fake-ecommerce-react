@@ -5,9 +5,9 @@ function Footer() {
         <footer>
             <div className="footer_grid_container">
                 <div>
-                <div className="nav_logo_container">
-                    <p to="/" className="nav_logo">FakE-Market</p>
-                </div>
+                    <div className="">
+                        <p to="/" className="nav_logo">FakE-Market</p>
+                    </div>
                     <h3>Contacto</h3>
                     <p>Email: famarket@fakemarket.com</p>
                     <p>Teléfono: +1234567890</p>
